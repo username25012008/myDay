@@ -1,5 +1,5 @@
 import { Dropdown, MenuProps } from "antd";
-import { useGetProfileQuery, useSetLogOutMutation } from "../api/ApiClient";
+import { useSetLogOutMutation } from "../api/ApiClient";
 import { Link, useLocation } from "react-router-dom";
 import { LoginOutlined, UserOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
