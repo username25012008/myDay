@@ -16,7 +16,7 @@ const Profile = () => {
     }
     formData.append("first_name", values?.first_name);
     formData.append("last_name", values?.last_name);
-    const res = await setProfile(formData).unwrap();
+    await setProfile(formData).unwrap();
     location.reload();
   };
 
