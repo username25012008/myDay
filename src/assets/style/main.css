@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@theme {
+    --color-darkblue: #334D6E;
+    --font-sans: 'Open Sans', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+}
+h1 {
+  font-weight: inherit;
+}
+.bg-login {
+    background-image: url(https://s3-alpha-sig.figma.com/img/9c3a/045a/2f3de5dec727298872c195160b46e6c2?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=UA7Lxb7e18OD3EBxTytoKUTkLCFSaVIAm6-OlXQvJM~J7ZyESuG7BJqXk2M9IdXP~~Pn6blMyWKOasfgkOQxSfzi-70zpFI9fD-LhN0lxUMHKfKkdk6PD-~aE6uWMCnHVDO2LwSnaudQZfvY1P~8WVl-pIH4qDghJEnY-LijvqSSOebj8Z-blmjj4eDWurIWbfP3ZDns-PT1SBKwXcxVoN8RA3xIJsuGVVKZIWEt5uNH2qrPkb5e7VzefOvxJR7IWkB2tJY77oihNyDpKLAUnp6THBZS~OC2dtQKb7A1OGFwEqc5o87HoE5aqqD6hqAFhsi6QyNksE6gVfbdbpNZ8g__);
+    background-position: center;
+    background-size: cover;
+}
