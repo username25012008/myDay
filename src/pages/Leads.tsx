@@ -57,7 +57,6 @@ const Leads = () => {
   const handleSubmit = async (values: any) => {
     if (edit) {
       values.phone = "+998" + values.phone;
-      console.log(values);
       editLead({ ...values, id: edit });
       form.resetFields();
       refetch();

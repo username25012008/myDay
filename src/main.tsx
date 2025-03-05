@@ -24,7 +24,7 @@ createRoot(document.getElementById("root")!).render(
                 <Route path="/dashboard" element={<Landing />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/leads" element={<Leads />} />
-                <Route path="*" element={<Navigate to={'/dashboard'}/>} />
+                <Route path="*" element={<Navigate to={'/'}/>} />
               </>
             ) : (
               <>
