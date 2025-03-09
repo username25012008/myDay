@@ -17,7 +17,7 @@ const Login = () => {
           message: "Ты успешно вошел!",
         });
         setTimeout(()=>{
-          window.location.pathname = "/dashboard";
+          window.location.pathname = "/";
         }, 500)
       } else {
         api.error({
