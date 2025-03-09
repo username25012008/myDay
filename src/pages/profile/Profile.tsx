@@ -25,7 +25,7 @@ const Profile = () => {
       <div className="bg-white w-full rounded-xl py-3 px-3">
         <span className="text-[#192A3E] font-semibold text-3xl">Profile</span>
         <div className="mt-5 w-6/12 mx-auto">
-          <div className="text-center">
+          <div className="text-center flex justify-center">
             {profile?.profile_photo ? (
               <img
                 src={profile.profile_photo}

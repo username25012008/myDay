@@ -19,6 +19,27 @@ export const apiClient = createApi({
     getLeads: build.query({
       query: () => "/api/v1/lead/list/",
     }),
+    getSubjects: build.query({
+      query: () => "/api/v1/course/subject-select",
+    }),
+    getTeachers: build.query({
+      query: () => "/api/v1/employee/select-list",
+    }),
+    getTimes: build.query({
+      query: () => "/api/v1/group/start-times",
+    }),
+    getStudents: build.query({
+      query: (page = 1) => `/api/v1/student/list/?page=${page}`,
+    }),
+    getInfoLead: build.query({
+      query: (id) => `/api/v1/lead/${id}/`,
+    }),
+    getCourseLvl: build.query({
+      query: (id) => `/api/v1/course/${id}/level`,
+    }),
+    getCourses: build.query({
+      query: () => "/api/v1/group/group-select",
+    }),
     setLogin: build.mutation({
       query(body) {
         return {
@@ -46,40 +67,12 @@ export const apiClient = createApi({
         };
       },
     }),
-    getSubjects: build.query({
-      query() {
-        return {
-          url: "/api/v1/course/subject-select",
-        };
-      },
-    }),
-    getTeachers: build.query({
-      query() {
-        return {
-          url: "/api/v1/employee/select-list",
-        };
-      },
-    }),
-    getTimes: build.query({
-      query() {
-        return {
-          url: "/api/v1/group/start-times",
-        };
-      },
-    }),
     setNewLead: build.mutation({
       query(body) {
         return {
           url: "/api/v1/lead/create/",
           method: "POST",
           body: body,
-        };
-      },
-    }),
-    getInfoLead: build.query({
-      query(id) {
-        return {
-          url: `/api/v1/lead/${id}/`,
         };
       },
     }),
@@ -92,18 +85,31 @@ export const apiClient = createApi({
         };
       },
     }),
+    setStudent: build.mutation({
+      query(body) {
+        return {
+          url: `/api/v1/student/create/`,
+          method: "POST",
+          body: body,
+        };
+      },
+    }),
   }),
 });
 export const {
   useGetProfileQuery,
   useGetLeadsQuery,
-  useSetLoginMutation,
-  useSetEditProfileMutation,
-  useSetLogOutMutation,
-  useGetSubjectsQuery,
-  useGetTeachersQuery,
-  useGetTimesQuery,
-  useSetNewLeadMutation,
   useGetInfoLeadQuery,
+  useGetTimesQuery,
+  useGetSubjectsQuery,
+  useGetStudentsQuery,
+  useGetTeachersQuery,
+  useGetCourseLvlQuery,
+  useGetCoursesQuery,
+  useSetLoginMutation,
+  useSetLogOutMutation,
+  useSetNewLeadMutation,
+  useSetEditProfileMutation,
   useEditLeadMutation,
+  useSetStudentMutation,
 } = apiClient;

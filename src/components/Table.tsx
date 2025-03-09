@@ -1,3 +1,7 @@
+import { BsPeople, BsPerson } from "react-icons/bs";
+import { IoTimeOutline } from "react-icons/io5";
+import { LuGraduationCap, LuPresentation } from "react-icons/lu";
+
 const Table = () => {
   const scheduleData = [
     {
@@ -68,13 +72,13 @@ const Table = () => {
               key={id}
             >
               <td className="px-6 py-4">{item.date}</td>
-              <td className="px-6 py-4">{item.time}</td>
+              <td className="px-6 py-4"><span className="bg-[#FEEEED] flex justify-start items-center gap-1 py-2 px-3 text-[#F7685B] rounded-lg text-[12px]"><IoTimeOutline size={14}/>{item.time}</span></td>
               <td className="px-6 py-4">{item.student}</td>
-              <td className="px-6 py-4">{item.teacher}</td>
-              <td className="px-6 py-4">{item.level}</td>
-              <td className="px-6 py-4">{item.type}</td>
-              <td className="px-6 py-4">{item.room}</td>
-              <td className="px-6 py-4">{item.studentsCount}</td>
+              <td className="px-6 py-4"><span className="flex justify-start items-center gap-1"><BsPerson />{item.teacher}</span></td>
+              <td className="px-6 py-4"><span className="flex justify-start items-center gap-1"><LuGraduationCap/>{item.level}</span></td>
+              <td className="px-6 py-4"><span className="flex justify-start items-center gap-1"><LuPresentation/>{item.type}</span></td>
+              <td className="px-6 py-4"><span className="bg-[#33A9FF] py-2 px-3 text-white rounded-lg">{item.room}</span></td>
+              <td className="px-6 py-4"><span className="flex justify-start items-center gap-1"><BsPeople />{item.studentsCount} students</span></td>
             </tr>
           ))}
         </tbody>

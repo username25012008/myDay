@@ -10,7 +10,7 @@ import { Provider } from "react-redux";
 import '@ant-design/v5-patch-for-react-19';
 import Profile from "./pages/profile/Profile.tsx";
 import Leads from "./pages/Leads.tsx";
-import Students from "./pages/students/Students.tsx";
+import Clients from "./pages/clients/Clients.tsx";
 
 const access = localStorage.getItem("access");
 createRoot(document.getElementById("root")!).render(
@@ -25,7 +25,7 @@ createRoot(document.getElementById("root")!).render(
                 <Route path="/dashboard" element={<Landing />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/leads" element={<Leads />} />
-                <Route path='/students' element={<Students />} />
+                <Route path='/clients' element={<Clients />} />
               </>
             ) : (
               <>

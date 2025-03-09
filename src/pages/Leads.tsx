@@ -46,7 +46,9 @@ const Leads = () => {
   const { data: subjects } = useGetSubjectsQuery("", { skip: !isModalOpen });
   const { data: teachers } = useGetTeachersQuery("", { skip: !isModalOpen });
   const { data: times } = useGetTimesQuery("", { skip: !isModalOpen });
-  const { data: lead } = useGetInfoLeadQuery(edit, { skip: edit === null });
+  const { data: lead, refetch: leadsRefetch } = useGetInfoLeadQuery(edit, {
+    skip: edit === null,
+  });
   const [api, contextHolder] = notification.useNotification();
 
   const showModal = () => {
@@ -61,6 +63,7 @@ const Leads = () => {
       form.resetFields();
       refetch();
       handleCancel();
+      setEdit(null);
       api.success({
         message: "Lead ozgartirildi !",
       });
@@ -84,15 +87,18 @@ const Leads = () => {
   };
   const handleCancel = () => {
     setIsModalOpen(false);
+    setEdit(null);
   };
   const handleSCancel = () => {
     setIsSModalOpen(false);
+    setEdit(null);
   };
   useEffect(() => {
     setLoading(isLoading);
   }, [isLoading]);
   useEffect(() => {
     if (lead && edit !== null) {
+      leadsRefetch();
       form.setFieldsValue({
         first_name: lead.first_name,
         last_name: lead.last_name,
@@ -172,7 +178,9 @@ const Leads = () => {
           closeIcon={<IoClose className="text-xl" />}
         >
           <div className="p-5">
-            <h2 className="text-center text-xl font-semibold">Add new lead</h2>
+            <h2 className="text-center text-xl font-semibold">
+              {edit ? "Edit" : "Add new"} lead
+            </h2>
             <p className="text-center text-gray-500 text-sm mb-5">
               By creating a new lead, you will also be adding a new customer to
               customer base

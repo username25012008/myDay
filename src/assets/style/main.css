@@ -13,3 +13,6 @@ h1 {
     background-position: center;
     background-size: cover;
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none; 
+}

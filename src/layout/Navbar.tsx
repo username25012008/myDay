@@ -31,6 +31,8 @@ const Navbar = ({ data, isError }: any) => {
       setText("Settings");
     } else if (pathname === "/leads") {
       setText("Board of leads");
+    } else if (pathname === "/clients") {
+      setText("List of clients");
     }
   }, [pathname]);
 
@@ -89,11 +91,15 @@ const Navbar = ({ data, isError }: any) => {
           className="cursor-pointer"
         >
           <div className="flex flex-row items-center gap-3">
-            <img
+            {
+              data?.profile_photo ? <img
               src={data?.profile_photo}
               alt={data?.first_name}
               className="w-10 h-10 rounded-full"
-            />
+            /> : <div className="bg-gray-500 w-10 h-10 rounded-full text-white text-lg flex justify-center items-center">
+              {data?.first_name?.charAt(0).toUpperCase()}
+            </div>
+            }
             <div className="flex flex-col">
               <span className="text-sm font-semibold text-darkblue">
                 {`${data?.last_name} ${data?.first_name?.charAt(0)}`}
