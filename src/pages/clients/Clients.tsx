@@ -41,7 +41,7 @@ const Students = () => {
   const { data: students, isLoading, refetch} = useGetStudentsQuery(page);
   const { data: teachers } = useGetTeachersQuery("");
   const { data: subjects } = useGetSubjectsQuery("");
-  const { data: courses, refetch: courseRefetch } = useGetCoursesQuery("",{skip:teacher != ""});
+  const { data: courses, refetch: courseRefetch } = useGetCoursesQuery("");
   const { data: levels, refetch: lvlRefetch } = useGetCourseLvlQuery(lvlId);
   const [setNewStudent] = useSetStudentMutation()
   const createStudents = (val: any) => {
