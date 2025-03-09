@@ -17,8 +17,8 @@ export const apiClient = createApi({
       query: () => "/api/v1/user/me/",
     }),
     getLeads: build.query({
-        query: () => "/api/v1/lead/list/",
-      }),
+      query: () => "/api/v1/lead/list/",
+    }),
     setLogin: build.mutation({
       query(body) {
         return {
@@ -38,64 +38,65 @@ export const apiClient = createApi({
       },
     }),
     setLogOut: build.mutation({
-        query(body) {
-          return {
-            url: "/api/v1/auth/logout/",
-            method: "POST",
-            body: body,
-          };
-        },
-      }),
-      getSubjects: build.query({
-          query(){
-             return {
-                url:"/api/v1/course/subject-select"
-             } 
-          }
-      }),
-      getTeachers: build.query({
-        query(){
-           return {
-              url:"/api/v1/employee/select-list"
-           } 
-        }
+      query(body) {
+        return {
+          url: "/api/v1/auth/logout/",
+          method: "POST",
+          body: body,
+        };
+      },
+    }),
+    getSubjects: build.query({
+      query() {
+        return {
+          url: "/api/v1/course/subject-select",
+        };
+      },
+    }),
+    getTeachers: build.query({
+      query() {
+        return {
+          url: "/api/v1/employee/select-list",
+        };
+      },
     }),
     getTimes: build.query({
-        query(){
-           return {
-              url:"/api/v1/group/start-times"
-           } 
-        }
-    }), 
+      query() {
+        return {
+          url: "/api/v1/group/start-times",
+        };
+      },
+    }),
     setNewLead: build.mutation({
-        query(body) {
-          return {
-            url: "/api/v1/lead/create/",
-            method: "POST",
-            body: body,
-          };
-        },
-      }),
-      getInfoLead: build.query({
-        query(id) {
-          return {
-            url: `/api/v1/lead/${id}/`,
-          };
-        }}),
-        editLead: build.mutation({
-          query(body) {
-            return {
-              url: `/api/v1/lead/${body?.id}/`,
-              method: "PUT",
-              body: body,
-            };
-          },
-        }),
+      query(body) {
+        return {
+          url: "/api/v1/lead/create/",
+          method: "POST",
+          body: body,
+        };
+      },
+    }),
+    getInfoLead: build.query({
+      query(id) {
+        return {
+          url: `/api/v1/lead/${id}/`,
+        };
+      },
+    }),
+    editLead: build.mutation({
+      query(body) {
+        return {
+          url: `/api/v1/lead/${body?.id}/`,
+          method: "PUT",
+          body: body,
+        };
+      },
+    }),
   }),
 });
 export const {
-    useGetProfileQuery,
-    useGetLeadsQuery,
+  useGetProfileQuery,
+  useGetLeadsQuery,
   useSetLoginMutation,
   useSetEditProfileMutation,
   useSetLogOutMutation,
@@ -104,5 +105,5 @@ export const {
   useGetTimesQuery,
   useSetNewLeadMutation,
   useGetInfoLeadQuery,
-  useEditLeadMutation
+  useEditLeadMutation,
 } = apiClient;
